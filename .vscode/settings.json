@@ -1,0 +1,15 @@
+{
+  "window.zoomLevel": 0.5,
+  "emmet.includeLanguages": {
+    "njk": "html"
+  },
+
+"editor.minimap.enabled": false,
+"zenMode.hideLineNumbers": false,
+"workbench.activityBar.visible": false,
+"workbench.statusBar.visible": false,
+"editor.codeActionsOnSave": {
+  "source.fixAll.eslint": true
+    }
+
+}
