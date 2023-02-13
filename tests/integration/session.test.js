@@ -1,9 +1,26 @@
-describe('Authentication', () => {
-  it('should sum two numbers', () => {
-    const x = 2
-    const y = 4
+const request = require('supertest')
+const app = require('../../src/app')
 
-    const sum = x + y
-    expect(sum).toBe(7)
+const { User } = require('../../src/app/models')
+const truncate = require('../utils/truncate')
+
+describe('Authentication', () => {
+  beforeEach(async () => {
+    await truncate()
+  })
+  it('should authenticate with valid credentials', async () => {
+    const user = await User.create({
+      name: 'diego',
+      email: 'diego@rocketseat.com.br',
+      password_hash: '123123'
+    })
+    const response = await request(app)
+      .post('/sessions')
+      .send({
+        email: user.email,
+        password: '123456'
+      })
+
+    expect(response.status).toBe(200)
   })
 })
