@@ -23,8 +23,13 @@
     "posttest": "NODE_ENV=test sequelize db:migrate:undo:all"
   },
   "dependencies": {
+    "bcrypt": "^5.1.0",
     "dotenv": "^16.0.3",
+    "factory-girl": "^5.0.4",
+    "faker": "^6.6.6",
+    "jsonwebtoken": "^9.0.0",
     "pg": "^8.9.0",
-    "sequelize": "^6.28.0"
+    "sequelize": "^6.28.0",
+    "util": "^0.12.5"
   }
 }
